@@ -18,7 +18,7 @@ export default function Dashboard() {
   const notify = (message) => toast(`${message}`);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
-  const [isMember, setIsMember] = useState(false);
+  const [isMember, setIsMember] = useState(true);
   const [isOwner, setIsOwner] = useState(false);
 
   const provider = useProvider();

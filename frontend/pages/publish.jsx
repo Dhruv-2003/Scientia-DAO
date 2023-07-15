@@ -18,7 +18,7 @@ import Loading from "../src/components/Loading";
 export default function Publish() {
   const notify = (message) => toast(`${message}`);
 
-  const [isMember, setIsMember] = useState(false);
+  const [isMember, setIsMember] = useState(true);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [researchFiles, setResearchFiles] = useState([]);

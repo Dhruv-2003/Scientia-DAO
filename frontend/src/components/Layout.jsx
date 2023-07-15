@@ -72,8 +72,8 @@ export default function Layout({ children }) {
             </li> */}
             <li className={styles.navitem}>
               {/* <button>Connect Wallet</button> */}
-              {/* <ConnectButton /> */}
-              <UnstoppableDomain />
+              <ConnectButton />
+              {/* <UnstoppableDomain /> */}
             </li>
           </ul>
           <button

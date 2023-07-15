@@ -23,14 +23,14 @@ export default function NewMember() {
   const [pfpURI, setPfpURI] = useState("");
   const [researchURI, setResearchURI] = useState([]);
 
-  const [isMember, setIsMember] = useState(false);
+  const [isMember, setIsMember] = useState(true);
   const [isUploaded, setIsUploaded] = useState(false);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
   const notify = (message) => toast(`${message}`);
 
-  const [eligibleToMint, setEligibleToMint] = useState(false);
+  const [eligibleToMint, setEligibleToMint] = useState(true);
 
   const provider = useProvider();
   const { data: signer } = useSigner();
