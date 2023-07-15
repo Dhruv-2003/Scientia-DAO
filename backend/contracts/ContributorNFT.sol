@@ -23,9 +23,10 @@ contract ContributorNFT is ERC721, ERC721Enumerable, Ownable {
     event Attest(address indexed to, uint256 indexed tokenId);
     event Revoke(address indexed to, uint256 indexed tokenId);
 
-    constructor(string memory _base, address _contributorContract)
-        ERC721("Scientia DAO Contributor", "SCIContributor")
-    {
+    constructor(
+        string memory _base,
+        address _contributorContract
+    ) ERC721("Scientia DAO Contributor", "SCIContributor") {
         baseURI = _base;
         _contributor = Contributors(_contributorContract);
     }
@@ -37,13 +38,9 @@ contract ContributorNFT is ERC721, ERC721Enumerable, Ownable {
 
     /// for every token ID we have the same metadata as the DAO NFT is same for everybody
     ///  we can create dynmaic on Chain NFT data too which is dynamic for users input
-    function tokenURI(uint256 tokenId)
-        public
-        view
-        virtual
-        override
-        returns (string memory)
-    {
+    function tokenURI(
+        uint256 tokenId
+    ) public view virtual override returns (string memory) {
         return baseURI;
     }
 
@@ -66,13 +63,14 @@ contract ContributorNFT is ERC721, ERC721Enumerable, Ownable {
     function _beforeTokenTransfer(
         address from,
         address to,
-        uint256 tokenId
+        uint256 firstTokenId,
+        uint256 batchSize
     ) internal override(ERC721, ERC721Enumerable) {
         require(
             to == address(0) || from == address(0),
             "The NFT is non transferrable"
         );
-        // super._beforeTokenTransfer(from, to, tokenId);
+        super._beforeTokenTransfer(from, to, firstTokenId, batchSize);
     }
 
     /// can be called by the owner of token to exit the DAO
@@ -96,7 +94,8 @@ contract ContributorNFT is ERC721, ERC721Enumerable, Ownable {
     function _afterTokenTransfer(
         address from,
         address to,
-        uint256 tokenId
+        uint256 tokenId,
+        uint256 batchSize
     ) internal override {
         if (from == address(0)) {
             emit Attest(to, tokenId);
@@ -105,12 +104,9 @@ contract ContributorNFT is ERC721, ERC721Enumerable, Ownable {
         }
     }
 
-    function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        override(ERC721, ERC721Enumerable)
-        returns (bool)
-    {
+    function supportsInterface(
+        bytes4 interfaceId
+    ) public view override(ERC721, ERC721Enumerable) returns (bool) {
         return super.supportsInterface(interfaceId);
     }
 }

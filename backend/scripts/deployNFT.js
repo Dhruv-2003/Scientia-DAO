@@ -12,7 +12,12 @@ async function main() {
 
   // print the address of the deployed contract
   console.log("NFT2 Contract Address:", nftContract.address);
+  return nftContract.address;
 }
+
+module.exports = {
+  main,
+};
 
 // Call the main function and catch if there is any error
 main()

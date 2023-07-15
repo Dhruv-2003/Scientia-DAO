@@ -1,7 +1,7 @@
 const { ethers } = require("hardhat");
 
-async function main() {
-  const nft = "0xd60123082CEd26d0a970ddeFE350A08aB3680207";
+async function main(nft) {
+  // const nft = "0xd60123082CEd26d0a970ddeFE350A08aB3680207";
   const MembersContract = await ethers.getContractFactory("newDAOMember");
 
   // deploy the contract
@@ -12,7 +12,12 @@ async function main() {
 
   // print the address of the deployed contract
   console.log("Members Contract Address:", membersContract.address);
+  return membersContract.address;
 }
+
+module.exports = {
+  main,
+};
 
 // Call the main function and catch if there is any error
 main()

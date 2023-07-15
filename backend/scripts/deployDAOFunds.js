@@ -11,7 +11,12 @@ async function main() {
 
   // print the address of the deployed contract
   console.log("DAO Funds Contract Address:", deployedDAOContract.address);
+  return deployedDAOContract.address;
 }
+
+module.exports = {
+  main,
+};
 
 // Call the main function and catch if there is any error
 main()
