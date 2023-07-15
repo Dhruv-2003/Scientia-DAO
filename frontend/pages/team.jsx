@@ -31,29 +31,6 @@ export default function team() {
 
         <div className={styles.founders}>
           <div className={styles.card}>
-            <h2>Nils Giebing</h2>
-
-            <Image src={nils_giebing} alt="Nils Giebing" />
-            <p>
-              <b>Backend Developer</b>
-            </p>
-            {/* <p>Loves to travel and contribute to communities.</p> */}
-            <a
-              href="https://twitter.com/NilsGiebing"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image src={twitter} alt="Twitter Logo" />
-            </a>
-            <a
-              href="https://github.com/nilsgiebing"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image src={github} alt="Github Logo" />
-            </a>
-          </div>
-          <div className={styles.card}>
             <h2>Kushagra Sarathe</h2>
 
             <Image src={kushagra_sarathe} alt="Nils Giebing" />
@@ -93,29 +70,6 @@ export default function team() {
             </a>
             <a
               href="https://github.com/Dhruv-2003"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image src={github} alt="Github Logo" />
-            </a>
-          </div>
-          <div className={styles.card}>
-            <h2>Aditya Gupta</h2>
-
-            <Image src={aditya_gupta} alt="Nils Giebing" />
-            <p>
-              <b>Smart-contract Developer</b>
-            </p>
-            {/* <p> Smart-contract developer</p> */}
-            <a
-              href="https://twitter.com/adiig7"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Image src={twitter} alt="Twitter Logo" />
-            </a>
-            <a
-              href="https://github.com/adiig7"
               target="_blank"
               rel="noreferrer"
             >
